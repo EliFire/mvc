@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.mail.ru', 465, 'ssl'))
-    ->setUsername('loftschoolphp2021')
+    ->setUsername('loftschoolphp2021@mail.ru')
     ->setPassword('vgreqrg64_94gJJ')
 ;
 
@@ -12,8 +12,8 @@ $transport = (new Swift_SmtpTransport('smtp.mail.ru', 465, 'ssl'))
 $mailer = new Swift_Mailer($transport);
 
 // Create a message
-$message = (new Swift_Message('Wonderful Subject'))
-    ->setFrom(['loftschoolphp2021' => 'EliSha'])
+$message = (new Swift_Message('Wonderful Star'))
+    ->setFrom(['loftschoolphp2021@mail.ru' => 'EliSha'])
     ->setTo(['elinshark@gmail.com'])
     ->setBody('To the stars and beyond!')
 ;
