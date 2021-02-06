@@ -56,11 +56,11 @@ class Message
         return $res;
     }
 
-    public static function getList(int $limit = 10, int $offset = 0): array
+    public static function getList(int $limit = 100, int $offset = 0): array
     {
         $db = Db::getInstance();
         $data = $db->fetchAll(
-            "SELECT * fROM messages LIMIT $limit OFFSET $offset",
+            "SELECT * fROM messages order by created_at ASC LIMIT $limit OFFSET $offset",
             __METHOD__
         );
         if (!$data) {
@@ -150,7 +150,7 @@ class Message
     {
         if (file_exists($file)) {
             $this->image = $this->genFileName();
-            move_uploaded_file($file,getcwd() . '/images/' . $this->image);
+            move_uploaded_file($file,getcwd() . '\images\\' . $this->image);
         }
     }
 

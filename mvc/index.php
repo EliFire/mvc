@@ -9,11 +9,14 @@ ini_set('error_reporting', E_ALL | E_NOTICE);
 $route = new \Base\Route();//создается объект роутинга и добавляется в него роут
 $route->add('/', \App\Controller\Login::class);//статический роутинг,
                                     //т. е. указано, какие роуты каким классам соответствуют
+                                    //что, где и как выводить
 
 $route->add('/login/register', \App\Controller\Login::class, 'register');
+//$route->add('/login/login', \App\Controller\Login::class, 'auth');
+
 
 $route->add('/blog', \App\Controller\Blog::class);
-$route->add('/test', \App\Controller\Login::class, 'test');
+//$route->add('/test', \App\Controller\Login::class, 'test');
 
 $app = new \Base\Application($route);//объект с созданными роутами передается в Application
 $app->run();

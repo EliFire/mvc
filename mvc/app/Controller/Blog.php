@@ -58,11 +58,17 @@ class Blog extends AbstractController
 
     public function twig()
     {
-        return $this->view->renderTwig('test.twig', ['var' => 'ololo']);
+        return $this->view->renderTwig('test.twig', ['var' => 'To the stars and beyond!']);
     }
 
     private function error()
     {
 
+    }
+
+    public function logOut()
+    {
+        session_destroy();
+        $this->redirect('/login');
     }
 }

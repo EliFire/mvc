@@ -15,7 +15,7 @@ class User
     public function __construct(array $data)//всегда вызывается первой
     {
         $this->name = $data['name'];
-        $this->password = $data['password'];;
+        $this->password = $data['password'];
         $this->createdAt = $data['created_at'];
         $this->email = $data['email'];
     }

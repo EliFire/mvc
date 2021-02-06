@@ -26,7 +26,7 @@ $user = $this->user;
             <? else: ?>
                 <span class="author">Сообщение от удаленного пользователя</span>
             <? endif; ?>
-            <div class="text"><?=htmlspecialchars(nl2br($message->getText()));?></div>
+            <div class="text"><?=htmlspecialchars($message->getText());?></div>
             <? if($message->getImage()):?>
                 <div><img src="/images/<?=$message->getImage();?>" style="width: 150px;"></div>
             <? endif;?>
@@ -42,3 +42,10 @@ $user = $this->user;
     Изображение: <input type="file" name="image"><br>
     <input type="submit" value="Отправить">
 </form>
+
+//выход из сессии
+<div class="block" style="margin-left: 50px;">
+    <form action="/blog/logOut" method="post">
+        <input type="submit" value="Выйти">
+    </form>
+</div>
