@@ -17,6 +17,13 @@ class View
         $this->templatePath = $path;
     }
 
+    public function assign($data)
+    {
+        foreach ($data as $key => $value) {
+            $this->data[$key] = $value;
+        }
+    }
+
     public function __get($name)
     {
         return $this->data[$name];

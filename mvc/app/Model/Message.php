@@ -58,23 +58,23 @@ class Message
 
     public static function getList(int $limit = 100, int $offset = 0): array
     {
-        $db = Db::getInstance();
-        $data = $db->fetchAll(
-            "SELECT * fROM messages order by created_at ASC LIMIT $limit OFFSET $offset",
-            __METHOD__
-        );
-        if (!$data) {
-            return [];
-        }
-
-        $messages = [];
-        foreach ($data as $elem) {
-            $message = new self($elem);
-            $message->id = $elem['id'];
-            $messages[] = $message;
-        }
-
-        return $messages;
+//        $db = Db::getInstance();
+//        $data = $db->fetchAll(
+//            "SELECT * fROM messages order by created_at ASC LIMIT $limit OFFSET $offset",
+//            __METHOD__
+//        );
+//        if (!$data) {
+//            return [];
+//        }
+//
+//        $messages = [];
+//        foreach ($data as $elem) {
+//            $message = new self($elem);
+//            $message->id = $elem['id'];
+//            $messages[] = $message;
+//        }
+//
+//        return $messages;
     }
 
     public static function getUserMessages(int $userId, int $limit): array

@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\Message;
+use App\Model\Eloquent\Message;
 use Base\AbstractController;
 
 class Blog extends AbstractController
@@ -13,17 +13,17 @@ class Blog extends AbstractController
             $this->redirect('/login');
         }
         $messages = Message::getList();
-        if ($messages) {
-            $userIds = array_map(function (Message $message) {
-                return $message->getAuthorId();
-            }, $messages);
-            $users = \App\Model\User::getByIds($userIds);
-            array_walk($messages, function (Message $message) use ($users) {
-                if (isset($users[$message->getAuthorId()])) {
-                    $message->setAuthor($users[$message->getAuthorId()]);
-                }
-            });
-        }
+//        if ($messages) {
+//            $userIds = array_map(function (Message $message) {
+//                return $message->getAuthorId();
+//            }, $messages);
+//            $users = \App\Model\Eloquent\User::getByIds($userIds);
+//            array_walk($messages, function (Message $message) use ($users) {
+//                if (isset($users[$message->getAuthorId()])) {
+//                    $message->setAuthor($users[$message->getAuthorId()]);
+//                }
+//            });
+//        }
         return $this->view->render('blog.phtml', [
             'messages' => $messages,
             'user' => $this->getUser()
@@ -58,7 +58,7 @@ class Blog extends AbstractController
 
     public function twig()
     {
-        return $this->view->renderTwig('test.twig', ['var' => 'To the stars and beyond!']);
+        return $this->view->renderTwig('test.twig', ['var' => 'ololo']);
     }
 
     private function error()
