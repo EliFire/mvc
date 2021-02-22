@@ -25,9 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $goods = Good::query()->get();
+        //$goods = Good::query()->get();
         return view('home', [
-            'goods' => Good::query()->orderBy('id', 'desc')->paginate(9)
+            'goods' => Good::query()->orderBy('id', 'desc')->paginate(9),
+            'categories' => Category::all(),
         ]);
     }
 }

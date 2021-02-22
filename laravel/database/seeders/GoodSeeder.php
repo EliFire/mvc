@@ -13,6 +13,6 @@ class GoodSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\Good::class, 50)->create();
+        \App\Models\Good::factory( 50)->create();
     }
 }

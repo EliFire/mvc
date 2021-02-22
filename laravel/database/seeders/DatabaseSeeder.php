@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Good::factory(50)->create();
+        $this->call(GoodSeeder::class);
     }
 }

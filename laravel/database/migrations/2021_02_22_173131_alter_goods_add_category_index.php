@@ -13,7 +13,7 @@ class AlterGoodsAddCategoryIndex extends Migration
      */
     public function up()
     {
-        Schema::table('goods', function (Blueprint $table) {
+        Schema::table('goods', function (Blueprint $table){
             $table->index('category_id');
         });
     }
@@ -25,8 +25,8 @@ class AlterGoodsAddCategoryIndex extends Migration
      */
     public function down()
     {
-        Schema::table('goods', function (Blueprint $table) {
-            $table->dropIndex('goods_category_id_index');
+        Schema::table('goods', function (Blueprint $table){
+            $table->dropIndex('category_id');
         });
     }
 }

@@ -21,4 +21,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/good/{id}', [App\Http\Controllers\GoodController::class, 'good'])->name('good');
-Route::get('/category/{id}', [App\Http\Controllers\GoodController::class, 'category'])->name('category');
+Route::get('/category/{id}', [\App\Http\Controllers\GoodController::class, 'category'])->name('category');

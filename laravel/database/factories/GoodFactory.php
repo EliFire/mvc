@@ -20,15 +20,26 @@ class GoodFactory extends Factory
      * @param $faker
      * @return array
      */
-    public function definition($faker)
+//    public function definition($faker)
+//    {
+//        return [
+//            'title' => $faker->word,
+//            'description' => $faker->text,
+//            'category_id' => mt_rand(1, 5),
+//            'price' => 10 * round(0.1 * mt_rand(100, 1000)),
+//        ];
+//    }
+
+    public function definition()
     {
         return [
-            'title' => $faker->word,
-            'description' => $faker->text,
-            'category_id' => mt_rand(1, 5),
+            'title' => $this->faker->word,
+            'description' => $this->faker->text,
+            'category_id' => mt_rand(1, 8),
             'price' => 10 * round(0.1 * mt_rand(100, 1000)),
         ];
     }
+
 
     /**
      * Indicate that the model's email address should be unverified.

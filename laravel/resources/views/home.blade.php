@@ -34,7 +34,6 @@
         </div>
         <div class="content-footer__container">
             <ul class="page-nav">
-                {{ $goods->links() }}
                 <li class="page-nav__item"><a href="#" class="page-nav__item__link"><i class="fa fa-angle-double-left"></i></a></li>
                 <li class="page-nav__item"><a href="#" class="page-nav__item__link">1</a></li>
                 <li class="page-nav__item"><a href="#" class="page-nav__item__link">2</a></li>
